@@ -3481,16 +3481,16 @@ exports.Formats = [
 			}
 		},
 	},
-	{
+		{
 		name: "[Gen 7] Scalemons",
 		desc: [
-		    "All Pokemon have their stats, barring HP, scaled to give them a BST of around 600.",
-		    "&bullet; <a href=\"https://docs.google.com/spreadsheets/d/1JW-YTOUgg6AtF47Pmea1mOvCgszl-CGsWgratnvuLE8/edit#gid=1841107233\">Spreadsheet of all stats</a>",
+			"All Pokemon have their stats, barring HP, scaled to give them a BST of around 600.",
+			"&bullet; <a href=\"https://docs.google.com/spreadsheets/d/1Qg9Q2KC2U7aSfOb25rBxGZ7A-uvYM6xNwjdQsclp56E/edit#gid=1841107233\">Spreadsheet of all stats</a>",
 		],
-
+		
 		mod: 'gen7',
-		ruleset: ['[Gen 7] Anything Goes', 'Species Clause'],
-		banlist: ['Eviolite'],
+		ruleset: ['Pokemon', 'Standard', 'Swagger Clause', 'Team Preview'],
+		banlist: ['Eviolite', 'Baton Pass'],
 		onModifyTemplate: function (template, pokemon) {
 			let bst = 0;
 			let hp = template.baseStats['hp'];
@@ -3500,7 +3500,7 @@ exports.Formats = [
 				template.baseStats[i] = Math.floor((template.baseStats[i] * (600 - template.baseStats['hp'])) / (bst - template.baseStats['hp']));
 			}
 			return template;
-		},
+		}
 	},
 	{
 		name: "[Gen 7] Trademarked",
